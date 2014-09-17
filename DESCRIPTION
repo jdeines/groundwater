@@ -1,0 +1,10 @@
+Package: groundwater
+Title: Tools to work with GMS and MODFLOW groundwater models
+Version: 0.1
+Authors@R: "Jillian Deines <jillian.deines@gmail.com> [aut, cre]"
+Depends:
+    R (>= 3.1.1),
+    raster,
+    rhdf5
+License: Open?
+LazyData: true
