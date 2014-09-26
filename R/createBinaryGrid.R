@@ -126,18 +126,18 @@ createBinaryGrid <- function(polybound, resolution, nrows=NA, ncols=NA,
 #                          outFile = outFileName)
 
 
-# different extent tests ------------------
-poly <- readOGR('S:/Users/deinesji/HPA/gis/lhm', 'RRB_bound2_6500m', verbose=F)
-cellSize = 1000
-outFileName = 'S:/Users/deinesji/HPA/gis/lhm/rrb1_surfaceGrid_1000m.img'
-bbox <- matrix(c(-245000,-153000,273000,154000),2,2)
-
-# create raster object in R
-test3 <- createBinaryGrid(polybound = poly, resolution = cellSize, ext = bbox)
-
-# create raster object in R, plot result
-test <- createBinaryGrid(polybound = poly, resolution = cellSize, ext = bbox, vis = T)
-
-# create raster object in R, plot result, write out Raster
-test <- createBinaryGrid(polybound = poly, resolution = cellSize, vis = T,
-                         outFile = outFileName, ext = bbox)
+# # different extent tests ------------------
+# poly <- readOGR('S:/Users/deinesji/HPA/gis/lhm', 'RRB_bound2_6500m', verbose=F)
+# cellSize = 1000
+# outFileName = 'S:/Users/deinesji/HPA/gis/lhm/rrb1_surfaceGrid_1000m.img'
+# bbox <- matrix(c(-245000,-153000,273000,154000),2,2)
+# 
+# # create raster object in R
+# test3 <- createBinaryGrid(polybound = poly, resolution = cellSize, ext = bbox)
+# 
+# # create raster object in R, plot result
+# test <- createBinaryGrid(polybound = poly, resolution = cellSize, ext = bbox, vis = T)
+# 
+# # create raster object in R, plot result, write out Raster
+# test <- createBinaryGrid(polybound = poly, resolution = cellSize, vis = T,
+#                          outFile = outFileName, ext = bbox)
