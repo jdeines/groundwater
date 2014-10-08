@@ -66,17 +66,17 @@ createBinaryGrid <- function(polybound, resolution, nrows=NA, ncols=NA,
     r <- raster(nrow = 100, ncol = 100, extent(ext))
     res(r) <- resolution
     proj4string(r) <- crs1
-    r[] <- 0
+    r[] <- 1
   } else if (!is.na(nrows) & !is.na(ncols)) {  # if rows, columns specified
     r <- raster(nrow = nrows, ncol = ncols, extent(ext))
     proj4string(r) <- crs1
-    r[] <- 0          
+    r[] <- 1          
   } else { 
     stop('If specifying nrows/ncols, both must be specified')
   }
   
   # update values outside of polygon to 0
-  rMask <- mask(r, polybound, inverse = T, updatevalue = 1)
+  rMask <- mask(r, polybound, updatevalue = 0)
   
   # if specified, make plot
   if (vis != F) {
